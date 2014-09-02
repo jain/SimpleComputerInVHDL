@@ -1,0 +1,459 @@
+<html>
+<head>
+<link rel="StyleSheet" href="style.css" type="text/css">
+<title>Crimson Editor &ndash; Help Topics &ndash; How-Tos</title>
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+</head>
+<body bgcolor="#FFFFFF">
+
+<a name="top"></a>
+
+<table width=560 cellspacing=0 cellpadding=0 border=0>
+  <tr>
+    <td class="body">
+
+<!-- BEGIN OF CONTENTS -->
+    
+
+<h1 class="title">Crimson Editor &ndash; <a href="index.html">Help Topics</a> &ndash; How-Tos</h1>
+
+<hr size=1 noshade>
+
+<a name="general_task"></a>
+
+<p class="bodyb">General Task</p>
+
+<ul>
+<li><a href="calculator.html">How to use built-in calculator</a>
+<li><a href="#howto01">How to use context help</a>
+<li><a href="#howto02">How to use Yahoo! online dictionary</a>
+<li><a href="#howto03">How to execute binary executable file</a>
+</ul>
+
+<a name="c_cpp_task"></a>
+
+<p class="bodyb">C/C++ Task</p>
+
+<ul>
+<li><a href="#howto10">How to install C/C++ compiler</a>
+<li><a href="#howto11">How to compile C/C++ source code</a>
+<li><a href="#howto03">How to execute binary executable file</a>
+</ul>
+
+<a name="java_task"></a>
+
+<p class="bodyb">Java Task</p>
+
+<ul>
+<li><a href="#howto20">How to install Java 2 SDK</a>
+<li><a href="#howto21">How to compile Java source code</a>
+<li><a href="#howto22">How to execute Java byte code</a>
+</ul>
+
+<a name="perl_task"></a>
+
+<p class="bodyb">Perl Task</p>
+
+<ul>
+<li><a href="#howto30">How to install Perl interpreter</a>
+<li><a href="#howto31">How to execute Perl script</a>
+</ul>
+
+<a name="latex_task"></a>
+
+<p class="bodyb">LaTeX Task</p>
+
+<ul>
+<li><a href="#howto40">How to install LaTeX compiler</a>
+<li><a href="#howto41">How to compile LaTeX document</a>
+<li><a href="#howto42">How to view dvi file with Yap</a>
+<li><a href="#howto43">How to convert dvi file into PostScript with dvips</a>
+<li><a href="#howto01">How to use context help</a>
+</ul>
+
+<p>&nbsp;</p>
+<div class="body">
+
+<a name="howto01"></a><h2 class="stitle">How to use context help</h2>
+
+
+<p>If you have a help file (*.hlp) or a html help file (*.chm) which explains something based on keyword index,
+then you can set up user tools to look up keyword you just have typed in without escaping from Crimson Editor.</p>
+
+<p>The following example shows how to set up 'User Tools' to use LaTeX help file.
+We assume that you have LaTeX help file (LATEX2E.HLP) in the following directory.
+<span class="text">C:\texmf\doc\latex\help\LATEX2E.HLP</span></p>
+
+<ol>
+<li>Open <i>Preferences</i> dialog box and select <i>User Tools</i> page
+<li>Select an empty slot and fill with the following arguments.
+<ul>
+<li>Menu Text: <i>LaTeX Context Help</i>
+<li>Command: <i>C:\texmf\doc\latex\help\LATEX2E.HLP</i>
+<li>Argument: <i>$(CurrWord)</i>
+<li>Initial dir: <i>$(FileDir)</i>
+<li>Hot key: <i>F1</i>
+<li>Close on exit: <i>Yes</i>
+<li>Save before execute: <i>No</i>
+</ul>
+</ol>
+<p>After that, you can press F1 to see the search index when the caret is on the word you want to look up.</p>
+
+
+<a name="howto02"></a><h2 class="stitle">How to use Yahoo! online dictionary</h2>
+
+
+<p>If you want to use online dictionary (Yahoo!: American Heritage)
+to look-up a word which you have just typed in without escaping from Crimson Editor,
+then</p>
+
+<ol>
+<li>Open <i>Preferences</i> dialog box and select <i>User Tools</i> page
+<li>Select an empty slot and fill with the following arguments.
+<ul>
+<li>Menu Text: <i>Yahoo! Online Dictionary</i>
+<li>Command: <i>C:\Program Files\Internet Explorer\IEXPLORE.EXE</i>
+<li>Argument: <i>http://education.yahoo.com/search/ahd?p=$(CurrWord)</i>
+<li>Initial dir: <i>$(FileDir)</i>
+<li>Hot key: <i>Ctrl+F1</i>
+<li>Close on exit: <i>Yes</i>
+<li>Save before execute: <i>No</i>
+</ul>
+</ol>
+
+After that, you can press Ctrl+F1 to see the dictionary contents when the caret is on the word you want to look up.<p>
+
+
+<a name="howto03"></a><h2 class="stitle">How to execute binary executable file</h2>
+
+
+If you have finished editing 'test.c',
+and you already compiled this file into binary executable file named 'test.exe',
+then you can use user tools to execute this binary file
+to see the result without escaping from Crimson Editor.<p>
+
+<ol>
+<li>1. Open <i>Preferences</i> dialog box and select <i>User Tools</i> page
+<li>2. Select an empty slot and fill with the following arguments.
+<ul>
+<li>Menu Text: <i>Execute Binary Executable</i>
+<li>Command: <i>C:\Windows\command.com</i>
+<li>Argument: <i>/C $(FileTitle)</i>
+<li>Initial dir: <i>$(FileDir)</i>
+<li>Hot key: <i>Ctrl+F5</i>
+<li>Capture output: <i>Yes</i> or <i>No</i>
+<li>Save before execute: <i>No</i>
+</ul>
+</ol>
+
+<p>After that, you can press Ctrl+F5 while editing <span class="text">'test.c'</span> to execute <span class="text">'test.exe'</span>.</p>
+
+<a name="howto10"></a><h2 class="stitle">How to install C/C++ compiler</h2>
+
+
+<p>If you want to learn how to write C/C++ program,
+you may want to install a C/C++ compiler first of all.
+Here is a guideline you can follow to install a compiler.</p>
+
+</p>In this example, we assume that you install Borland C++ compiler which is free to use.
+Of course, there are more compilers available (Cygnus, DJGPP for example).
+It is up to you which compiler to use.</p>
+
+<ol>
+<li>Download 'FreeCommandLineTools.exe' from Borland software corporation  homepage. <i>(<a href="http://www.borland.com" target=_blank>http://www.borland.com</a>)</i>
+<li>Install <span class="text">'FreeCommandLineTools.exe'</span> into <span class="text">'C:\Borland\BCC55' directory.</span>
+<li>Add <span class="text">'C:\Borland\BCC55\bin' to the existing path.</span>
+<li>Set compiler options and linker options.
+<ul>
+<li>From the bin directory of your installation, create a 'bcc32.cfg' file which will set the compiler options for the Include and Lib paths (-I and -L switches to compiler) by adding these lines:
+<ul class="nbul">
+<li><i>-I"C:\Borland\BCC55\include"</i>
+<li><i>-L"C:\Borland\BCC55\lib"</i>
+</ul>
+<li>create an 'ilink32.cfg' file which will set the linker option for the Lib path by adding this line:
+<ul class ="nbul"><li><i>-L"c:\Borland\BCC55\lib"</i></ul>
+</ul>
+</ol>
+
+
+<a name="howto11"></a>
+<h2 class="stitle">How to compile C/C++ source code</h2>
+
+
+<p>If you have finished writing C/C++ program,
+then you can use user tools to compile this program into binary file
+without escaping from Crimson Editor.</p>
+
+<p>The following example assume that
+you already installed C++ Builder in 'C:\Borland\BCC55' directory.
+(ref: <a href="#howto10">How to install C/C++ compiler</a>)</p>
+
+<ol>
+<li>Open <i>Preferences</i> dialog box and select <i>User Tools</i> page
+<li>Select an empty slot and fill with the following arguments.
+<ul>
+<li>Menu Text: <i>Compile C/C++ Source Code</i>
+<li>Command: <i>C:\Borland\BCC55\bin\bcc32.exe</i>
+<li>Argument: <i>$(FileName)</i>
+<li>Initial dir: <i>$(FileDir)</i>
+<li>Hot key: <i>Ctrl+F7</i>
+<li>Capture output: <i>Yes</i>
+<li>Save before execute: <i>Yes</i>
+</ul>
+</ol>
+
+
+<p>After that, you can press Ctrl+F7 while editing <span class="text">'test.c'</span> to compile this source code.</p>
+
+
+<a name="howto20"></a>
+<h2 class="stitle">How to install Java 2 SDK</h2>
+
+
+<p>If you want to learn how to write Java program,
+you need to install Java 2 SDK first of all.
+Here is a guideline you can follow to install Java 2 SDK.</p>
+
+<ol>
+<li>Download Java 2 SDK for Windows from Sun Microsystems homepage. <i>(<a href="http://java.sun.com" target=_blank>http://java.sun.com</a>)</i>
+<li>Install Java 2 SDK into <span class="text">'C:\jdk1.3.1'</span> directory.
+<li>Add <span class="text">'C:\jdk1.3.1\bin'</span> to the existing path.
+</ol>
+
+
+<a name="howto21"></a>
+<h2 class="stitle">How to compile Java source code</h2>
+
+
+<p>If you have finished writing Java program,
+then you can use user tools to compile this program into byte code
+without escaping from Crimson Editor.</p>
+
+<p>The following example assume that
+you already installed Java 2 SDK in <span class="text">'C:\jdk1.3.1'</span> directory.
+(ref: <a href="#howto20">How to install Java 2 SDK</a>)</p>
+
+<ol>
+<li>Open <i>Preferences</i> dialog box and select <i>User Tools</i> page
+<li>Select an empty slot and fill with the following arguments.
+<ul>
+<li>Menu Text: <i>Compile Java Source Code</i>
+<li>Command: <i>C:\jdk1.3.1\bin\javac.exe</i>
+<li>Argument: <i>$(FileName)</i>
+<li>Initial dir: <i>$(FileDir)</i>
+<li>Hot key: <i>Ctrl+F7</i>
+<li>Capture output: <i>Yes</i>
+<li>Save before execute: <i>Yes</i>
+</ul>
+</ol>
+
+<p>After that, you can press Ctrl+F7 while editing <span class="text">'test.java'</span> to compile this source code.</p>
+
+
+<a name="howto22"></a>
+<h2 class="stitle">How to execute Java byte code</h2>
+
+
+<p>If you have finished editing 'test.java',
+and you already compiled this file into byte code named 'test.class',
+then you can use user tools to execute this byte code
+to see the result without escaping from Crimson Editor.</p>
+
+<p>The following example assume that
+you already installed Java 2 SDK in <span class="text">'C:\jdk1.3.1'</span> directory.
+(ref: <a href="#howto20">How to install Java 2 SDK</a>)</p>
+
+<ol>
+<li>Open <i>Preferences</i> dialog box and select <i>User Tools</i> page
+<li>Select an empty slot and fill with the following arguments.
+<ul>
+<li>Menu Text: <i>Execute Java Byte Code</i>
+<li>Command: <i>C:\jdk1.3.1\bin\java.exe</i>
+<li>Argument: <i>$(FileTitle)</i>
+<li>Initial dir: <i>$(FileDir)</i>
+<li>Hot key: <i>Ctrl+F5</i>
+<li>Capture output: <i>Yes</i> or <i>No</i>
+<li>Save before execute: <i>No</i>
+</ul>
+</ol>
+
+<p>After that you can press Ctrl+F5 while editing <span class="text">'test.java'</span> to execute <span class="text">'test.class'</span>.</p>
+
+
+<a name="howto30"></a>
+<h2 class="stitle">How to install Perl interpreter</h2>
+
+
+<p>If you want to learn how to write Perl script,
+you need to install Perl interpreter first of all.
+Here is a guideline you can follow to install Perl interpreter.</p>
+
+<p>In this example, we assume that you install ActivePerl which is free to use.
+Of course there are more Perl interpreters you can use.
+It is up to you which interpreter to use.</p>
+
+<ol>
+<li>Download ActivePerl for Windows from ActiveState Corporation homepage <i>(<a href="http://www.activestate.com" target=_blank>http://www.activestate.com</a>).</i>
+<li>Install ActivePerl into 'C:\Perl' directory.<br>
+<li>Add 'C:\Perl\bin' to the existing path.<p>
+</ol>
+
+
+<a name="howto31"></a>
+<h2 class="stitle">How to execute Perl script</h2>
+
+
+<p>If you have finished writing Perl program,
+then you can use user tools to run this program
+without escaping from Crimson Editor.</p>
+
+<p>The following example assume that
+you already installed Perl interpreter in 'C:\Perl' directory.
+(ref: <a href="#howto30">How to install Perl interpreter</a>)</p>
+
+<ol>
+<li>Open <i>Preferences</i> dialog box and select <i>User Tools</i> page<br>
+<li>Select an empty slot and fill with the following arguments.<br>
+<ul>
+<li>Menu Text: <i>Execute Perl Script</i><br>
+<li>Command: <i>C:\Perl\bin\perl.exe</i><br>
+<li>Argument: <i>$(FileName)</i><br>
+<li>Initial dir: <i>$(FileDir)</i><br>
+<li>Hot key: <i>Ctrl+F5</i><br>
+<li>Capture output: <i>Yes</i><br>
+<li>Save before execute: <i>Yes</i><p>
+</ul>
+</ol>
+
+
+<p>After that, you can press Ctrl+F5 while editing <span class="text">'test.pl'</span> to execute this script.</p>
+
+
+<a name="howto40"></a>
+<h2 class="stitle">How to install LaTeX compiler</h2>
+
+
+<p>If you want to learn how to write LaTeX document,
+you need to install LaTeX compiler first of all.
+Here is a guideline you can follow to install LaTeX compiler.</p>
+
+<p>In this example, we assume that you install MiKTeX
+which is implementation of TeX and related programs for Windows</p>
+
+<ol>
+<li>Download MiKTeX from MiKTeX Project Page.<i>(<a href="http://www.miktex.org" target=_blank>http://www.miktex.org</a>)</i>
+<li>Install MiKTeX into <span class="text">'C:\texmf'</span> directory.
+<li>Add <span class="text">'C:\texmf\miktex\bin'</span> to the existing path.<p>
+</ol>
+
+<a name="howto41"></a>
+<h2 class="stitle">How to compile LaTeX document</h2>
+
+
+<p>If you have finished writing LaTeX document,
+then you can use user tools to compile this document into dvi file
+without escaping from Crimson Editor.</p>
+
+<p>The following example assume that
+you already installed MiKTeX in 'C:\texmf' directory.
+(ref: <a href="#howto40">How to install LaTeX compiler</a>)</p>
+
+<ol>
+<li>Open <i>Preferences</i> dialog box and select <i>User Tools</i> page
+<li>Select an empty slot and fill with the following arguments.
+<ul>
+<li>Menu Text: <i>Compile LaTeX Document</i>
+<li>Command: <i>C:\texmf\miktex\bin\latex.exe</i>
+<li>Argument: <i>$(FileName)</i>
+<li>Initial dir: <i>$(FileDir)</i>
+<li>Hot key: <i>Ctrl+F7</i>
+<li>Capture output: <i>Yes</i>
+<li>Save before execute: <i>Yes</i>
+</ul>
+</ol>
+
+<p>After that, you can press Ctrl+F7 while editing <span class="text">'test.tex'</span> to compile this document.<p>
+
+
+<a name="howto42"></a>
+<h2 class="stitle">How to view dvi file with Yap</h2>
+
+
+<p>If you have finished writing LaTeX document,
+and also have compiled this document into dvi file already,
+then you can use user tools to view this dvi file with Yap
+without escaping from Crimson Editor.</p>
+
+<p>The following example assume that
+you already installed MiKTeX in <span class="text">'C:\texmf'</span> directory.
+(ref: <a href="#howto40">How to install LaTeX compiler</a>)</p>
+
+<ol>
+<li>Open <i>Preferences</i> dialog box and select <i>User Tools</i> page
+<li>Select an empty slot and fill with the following arguments.
+<ul>
+<li>Menu Text: <i>View dvi file with Yap</i>
+<li>Command: <i>C:\texmf\miktex\bin\yap.exe</i>
+<li>Argument: <i>$(FileTitle)</i>
+<li>Initial dir: <i>$(FileDir)</i>
+<li>Hot key: <i>Ctrl+F5</i>
+<li>Close on exit: <i>Yes</i>
+<li>Save before execute: <i>No</i>
+</ul>
+</ol>
+
+<p>After that, you can press Ctrl+F5 while editing <span class="text">'test.tex'</span> to view <span class="text">'test.dvi'</span> with Yap.</p>
+
+
+<a name="howto43"></a>
+<h2 class="stitle">How to convert dvi file into PostScript with dvips</h2>
+
+
+<p>If you have a dvi file named 'test.dvi' compiled from <span class="text">'test.tex'</span>,
+then you can use user tools to convert this file into PostScript file <span class="text">'test.ps'</span>
+without escaping from Crimson Editor.</p>
+
+<p>The following example assume that you already installed MiKTeX in <span class="text">'C:\texmf'</span> directory.
+(ref: <a href="#howto40">How to install LaTeX compiler</a>)</p>
+
+<ol>
+<li>Open <i>Preferences</i> dialog box and select <i>User Tools</i> page
+<li>Select an empty slot and fill with the following arguments.
+<ul>
+<li>Menu Text: <i>Convert to PostScript</i>
+<li>Command: <i>C:\texmf\miktex\bin\dvips.exe</i>
+<li>Argument: <i>$(FileTitle)</i>
+<li>Initial dir: <i>$(FileDir)</i>
+<li>Hot key: <i>F7</i>
+<li>Capture output: <i>Yes</i>
+<li>Save before execute: <i>No</i>
+</ul>
+</ol>
+
+<p>After that, you can press F7 while editing <span class="text">'test.tex'</span> to convert <span class="text">'test.dvi'</span> into <span class="text">'test.ps'</span>.</p>
+
+</div>
+<!-- END OF CONTENTS -->
+
+    </td>
+  </tr>
+</table><p>
+
+
+<table width=560 cellspacing=0 cellpadding=0 border=0>
+  <tr>
+    <td><hr size=1 noshade></td>
+  </tr>
+  <tr>
+    <td align=center class="body">
+		Copyright &copy; 1999-2006 by <a href="mailto:crimsonware@yahoo.com">Ingyu Kang</a>,<br>
+		Copyright &copy; 2006-2007 by <a href="http://www.emeraldeditor.com">Emerald Editor Community</a>.<br>
+		All rights reserved.
+    </td>
+  </tr>
+</table><p>
+
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+       		ORG     0
+		  	IN   	SWITCHES	;Load value stored in Switches
+        	SHIFT   1
+		  	OUT		LEDS
+        	OUT		SEVENSEG
+        	
+			ORG     &H050
+SWITCHES: 	EQU 	&H00
+LEDS:		EQU 	&H01
+TIMER:		EQU 	&H02
+SEVENSEG: 	EQU 	&H04
+TWOSECS:   	DW      &H0014
+INDATA:    	DW      &H0000
+ZERO:    	DW      &H0000

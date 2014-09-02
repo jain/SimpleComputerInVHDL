@@ -1,0 +1,75 @@
+ %% PLEASE DO NOT MODIFY OR DELETE THIS FILE! %% 
+ %% This file contains information about the installation of an application. %% 
+ %% It will be used to automatically remove all application components from your computer if you choose to do so. %% 
+
+
+NOTE: Beginning of the bootstrapper section
+
+CONFIG: Title: "SCASM"
+
+ACTION: RegKey: "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion", "SharedDLLs"
+
+ACTION: SystemFile: "C:\WINDOWS\SYSTEM32\VB6STKIT.DLL"
+(File currently on disk was already up to date)
+
+ACTION: SystemFile: "C:\WINDOWS\SYSTEM32\COMCAT.DLL"
+(File currently on disk was already up to date)
+
+ACTION: SystemFile: "C:\WINDOWS\SYSTEM32\STDOLE2.TLB"
+(File currently on disk was already up to date)
+
+ACTION: SystemFile: "C:\WINDOWS\SYSTEM32\ASYCFILT.DLL"
+(File currently on disk was already up to date)
+
+ACTION: SystemFile: "C:\WINDOWS\SYSTEM32\OLEPRO32.DLL"
+(File currently on disk was already up to date)
+
+ACTION: SystemFile: "C:\WINDOWS\SYSTEM32\OLEAUT32.DLL"
+(File currently on disk was already up to date)
+
+ACTION: SystemFile: "C:\WINDOWS\SYSTEM32\msvbvm60.dll"
+(File currently on disk was already up to date)
+
+ACTION: DllSelfRegister: "C:\WINDOWS\SYSTEM32\COMCAT.DLL"
+
+ACTION: TLBRegister: "C:\WINDOWS\SYSTEM32\STDOLE2.TLB"
+
+ACTION: DllSelfRegister: "C:\WINDOWS\SYSTEM32\OLEPRO32.DLL"
+
+ACTION: DllSelfRegister: "C:\WINDOWS\SYSTEM32\OLEAUT32.DLL"
+
+ACTION: DllSelfRegister: "C:\WINDOWS\SYSTEM32\msvbvm60.dll"
+
+NOTE: End of the bootstrapper section
+
+NOTE: Now spawning the main Setup program 'Setup1.exe'....
+
+ACTION: CreateDir: "C:\Users\USER\Desktop\Semester 3\ece 2031\Lab7\Crimson Editor SVN286\SCASM"
+
+ACTION: PrivateFile: "C:\Users\USER\Desktop\Semester 3\ece 2031\Lab7\Crimson Editor SVN286\spec\scasm.spc"
+(File was not found or was an older version -- new file copied)
+
+ACTION: PrivateFile: "C:\Users\USER\Desktop\Semester 3\ece 2031\Lab7\Crimson Editor SVN286\spec\scasm.key"
+(File was not found or was an older version -- new file copied)
+
+ACTION: PrivateFile: "C:\Users\USER\Desktop\Semester 3\ece 2031\Lab7\Crimson Editor SVN286\link\extension.asm"
+(File was not found or was an older version -- new file copied)
+
+ACTION: PrivateFile: "C:\Users\USER\Desktop\Semester 3\ece 2031\Lab7\Crimson Editor SVN286\SCASM\scasm.cfg"
+(File was not found or was an older version -- new file copied)
+
+ACTION: SystemFile: "C:\Windows\System32\msvcrt.dll"
+(File currently on disk was already up to date)
+
+ACTION: SharedFile: "C:\Windows\System32\scrrun.dll"
+(File currently on disk was already up to date)
+
+ACTION: PrivateFile: "C:\Users\USER\Desktop\Semester 3\ece 2031\Lab7\Crimson Editor SVN286\SCASM\SCASM.exe"
+(File was not found or was an older version -- new file copied)
+
+ACTION: DllSelfRegister: "C:\Windows\System32\scrrun.dll"
+
+ACTION: RegKey: "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion", "App Paths\SCASM.exe"
+
+ACTION: RegValue: "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\SCASM.exe", ""
+

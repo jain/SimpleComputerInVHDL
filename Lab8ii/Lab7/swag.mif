@@ -1,0 +1,29 @@
+-- Altera Memory Initialization File (MIF)
+
+DEPTH = 1024;
+WIDTH = 16;
+
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+
+CONTENT
+  BEGIN
+    [000..3FF] : 0000;  -- Default to NOP
+
+           000 : 4800;  -- 		  	IN   	SWITCHES	;Load value stored in Switches
+           001 : 0851;  --         	STORE   INDATA   	;Store value stored in INDATA
+           002 : 0451;  -- Start:     	LOAD	INDATA		;Load INDATA
+           003 : 4C01;  --         	OUT		LEDS		;write to leds
+           004 : 4C04;  --         	OUT		SEVENSEG	;write to SEVENSEG
+           005 : 3001;  --         	SHIFT   1	     	;Shift it by 1
+           006 : 0851;  --         	STORE	INDATA		;Store new value in INDATA
+           007 : 0452;  --         	LOAD	ZERO		;Load a value of 0 into AC
+           008 : 4C02;  --         	OUT		TIMER		;set timer to 0
+           009 : 4802;  -- Here:   	IN	    TIMER    	;Read in timer forever
+           00A : 1050;  -- 			SUB		TWOSECS		;Subtract 2
+           00B : 1809;  -- 			JNEG	Here		;if timer is negative loop again
+           00C : 1402;  -- 			JUMP	Start		;else change LEDS and SEVENSEG
+           050 : 0014;  -- TWOSECS:   	DW      &H0014		;Define TWOSECS
+           051 : 0000;  -- INDATA:    	DW      &H0000		;Define INDATA
+           052 : 0000;  -- ZERO:    	DW      &H0000		;Define ZERO
+  END;

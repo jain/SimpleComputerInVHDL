@@ -1,0 +1,204 @@
+<html>
+<head>
+<link rel="StyleSheet" href="style.css" type="text/css">
+<title>Crimson Editor &ndash; Help Topics &ndash; Built-in Calculator</title>
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+</head>
+<body bgcolor="#FFFFFF">
+
+<a name="top"></a>
+
+<table width=560 cellspacing=0 cellpadding=0 border=0>
+  <tr>
+    <td class="body">
+
+<!-- BEGIN OF CONTENTS -->
+    
+<h1 class="title">Crimson Editor &ndash; <a href="index.html">Help Topics</a> &ndash; Built-in Calculator</h1>
+
+
+<hr size=1 noshade>
+
+<p>Crimson Editor is equiped with a calculator that can evaluate simple expressions.
+If you want to calculate a simple expression, use Crimson Editor built-in calculator to get the answer quickly.</p>
+
+<a name="usage_examples"></a><p class="stitle">Usage Examples</p>
+
+<p>Following examples show how to use Crimson Editor built-in calculator:</p>
+
+<ol>
+<li><p>Type in the expression you want to evaluate in Crimson Editor. The whole expression should be written in one line.</p>
+<li><p>Press Ctrl+Enter to calculate the expression when the caret is in the line of expression.</p>
+ <ul class="nbul">
+  <li><p>Example:</p>
+  <li><span class="bodyb"> 3.14 * (2.43 + 0.91)</span> &lt;&ndash; <i>press Ctrl+Enter when the caret is in the expression line</i><br>
+  <li>= 10.487600 &lt;&ndash; <i>you will get the answer immediately</i><p>
+ </ul>
+</ol>
+
+<p>There are two special variables in Crimson Editor calculator:
+<ol>
+ <li><p><span class="bodyb">$ans</span> &ndash; If you want to use the value that was evaluated in the earler step, use a special variable named <i>$ans</i>.</p>
+ <li><p><span class="bodyb">$pi</span> &ndash; The value of the variable <i>$pi</i> is 3.1415926535.</p>
+ <ul class="nbul">
+  <li><p>Example:</p>
+  <li><b>$ans / $pi</b>
+  <li>= 3.338307<p>
+ </ul>
+</ol>
+
+<p>Crimson Editor supports basic mathematics functions which are very similar to those used in C math library.</p>
+
+<ul class="nbul">
+<ul class="nbul">
+<li><p>Example:</p>
+<li class="bodyb">sin(1.2) + atan2(3.2, 4.3)
+<li class="body">= 1.571809
+</ul>
+</ul>
+
+<p>Following list shows basic mathematics functions supported by Crimson Editor:</p>
+
+<a href="#fabs">abs</a>, 
+<a href="#fabs">fabs</a>,
+<a href="#fmod">mod</a>,
+<a href="#fmod">fmod</a>, 
+<a href="#ceil">ceil</a>,
+<a href="#floor">floor</a>, 
+<a href="#round">round</a>, 
+<a href="#min">min</a>, 
+<a href="#max">max</a>,
+<a href="#acos">acos</a>, 
+<a href="#asin">asin</a>, 
+<a href="#atan">atan</a>, 
+<a href="#atan2">atan2</a>, 
+<a href="#cos">cos</a>, 
+<a href="#sin">sin</a>, 
+<a href="#tan">tan</a>, 
+<a href="#cosh">cosh</a>, 
+<a href="#sinh">sinh</a>, 
+<a href="#tanh">tanh</a>,
+<a href="#exp">exp</a>, 
+<a href="#log">log</a>, 
+<a href="#log10">log10</a>, 
+<a href="#pow">pow</a>, 
+<a href="#sqr">sqr</a>, 
+<a href="#sqrt">sqrt</a><p>
+
+<p>Date functions, those are frequently used in financial problems, are now available in Crimson Editor 3.45.
+Following list shows date functions supported by Crimson Editor:</p>
+
+<a href="#today">today</a>, 
+<a href="#yeardays">yeardays</a>, 
+<a href="#monthdays">monthdays</a>, 
+<a href="#date2days">date2days</a>, 
+<a href="#days2date">days2date</a>, 
+<a href="#eomday">eomday</a>, 
+<a href="#eomdate">eomdate</a>, 
+<a href="#weekday">weekday</a>, 
+<a href="#isbizdate">isbizdate</a>, 
+<a href="#nbizdate">nbizdate</a>, 
+<a href="#pbizdate">pbizdate</a>, 
+<a href="#adddays">adddays</a>, 
+<a href="#addmonths">addmonths</a>, 
+<a href="#addterms">addterms</a>, 
+<a href="#days360">days360</a>, 
+<a href="#days365">days365</a>, 
+<a href="#daysact">daysact</a>, 
+<a href="#daysbet">daysbet</a>, 
+<a href="#monthsbet">monthsbet</a>, 
+<a href="#termsbet">termsbet</a>, 
+<a href="#termfrac">termfrac</a>, 
+<a href="#yearfrac">yearfrac</a><p>
+
+
+<p>&nbsp;</p>
+
+
+<a name="math_functions"></a><p class="stitle">Mathematics Functions</p>
+
+<table width=100% cellspacing=1 cellpadding=1 border=0>
+
+<tr><td class="bodyb" width=15% valign=top><a name="fabs" ></a>abs, fabs</td><td class="body" width=85%><span class="bodybi">fabs(x)     </span>- absolute value functions        <br>returns the absolute value of x, |x|.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="fmod" ></a>mod, fmod</td><td class="body" width=85%><span class="bodybi">fmod(x, y)  </span>- remainder functions             <br>returns the remainder f of the division of x by y, where f has the same sign as x, such that x=iy+f for some integer i, and |f| < |y|.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="ceil" ></a>ceil</td>     <td class="body" width=85%><span class="bodybi">ceil(x)     </span>- ceiling function                <br>returns the smallest integer not less than x.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="floor"></a>floor</td>    <td class="body" width=85%><span class="bodybi">floor(x)    </span>- floor function                  <br>returns the largest integer not greater than x.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="round"></a>round</td>    <td class="body" width=85%><span class="bodybi">round(x)    </span>- round function                  <br>rounds its argument to the nearest integral value.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="min"  ></a>min</td>      <td class="body" width=85%><span class="bodybi">min(x, y)   </span>- minimum                         <br>returns the minimum of a pair of values<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="max"  ></a>max</td>      <td class="body" width=85%><span class="bodybi">max(x, y)   </span>- maximum                         <br>returns the maximum of a pair of values<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="acos" ></a>acos</td>     <td class="body" width=85%><span class="bodybi">acos(x)     </span>- arccosine function              <br>returns the arccosine of x in the range 0 to pi.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="asin" ></a>asin</td>     <td class="body" width=85%><span class="bodybi">asin(x)     </span>- arcsine function                <br>returns the arcsine of x in the range -pi/2 to pi/2.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="atan" ></a>atan</td>     <td class="body" width=85%><span class="bodybi">atan(x)     </span>- arctangent function             <br>returns the arctangent of x in the range -pi/2 to pi/2.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="atan2"></a>atan2</td>    <td class="body" width=85%><span class="bodybi">atan2(y, x) </span>- arctangent-and-quadrant function<br>returns the arctangent of y/x, in the range -pi to pi, using the signs of both arguments to determine the quadrant of the return value.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="cos"  ></a>cos</td>      <td class="body" width=85%><span class="bodybi">cos(x)      </span>- cosine function                 <br>returns the cosine of x (x specified in radians).<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="sin"  ></a>sin</td>      <td class="body" width=85%><span class="bodybi">sin(x)      </span>- sine function                   <br>returns the sine of x (x specified in radians).<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="tan"  ></a>tan</td>      <td class="body" width=85%><span class="bodybi">tan(x)      </span>- tangent function                <br>returns the tangent of x (x specified in radians).<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="cosh" ></a>cosh</td>     <td class="body" width=85%><span class="bodybi">cosh(x)     </span>- hyperbolic cosine function      <br>returns the hyperbolic cosine of its argument.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="sinh" ></a>sinh</td>     <td class="body" width=85%><span class="bodybi">sinh(x)     </span>- hyperbolic sine function        <br>returns the hyperbolic sine of its argument.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="tanh" ></a>tanh</td>     <td class="body" width=85%><span class="bodybi">tanh(x)     </span>- hyperbolic tangent function     <br>returns the hyperbolic tangent of its argument.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="exp"  ></a>exp</td>      <td class="body" width=85%><span class="bodybi">exp(x)      </span>- exponential function            <br>returns e^x.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="log"  ></a>log</td>      <td class="body" width=85%><span class="bodybi">log(x)      </span>- natural logarithm function      <br>returns the natural logarithm of x. The value of x must be greater than zero.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="log10"></a>log10</td>    <td class="body" width=85%><span class="bodybi">log10(x)    </span>- common logarithm function       <br>returns the logarithm base ten of x. The value of x must be greater than zero.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="pow"  ></a>pow</td>      <td class="body" width=85%><span class="bodybi">pow(x, y)   </span>- power function                  <br>returns x^y. If x is negative, y must be an integer value.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="sqr"  ></a>sqr</td>      <td class="body" width=85%><span class="bodybi">sqr(x)      </span>- square function                 <br>returns x*x.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="sqrt" ></a>sqrt</td>     <td class="body" width=85%><span class="bodybi">sqrt(x)     </span>- square root function            <br>returns the non-negative square root of x. The value of x must not be less than zero.<p></td></tr>
+ 
+</table><p>
+
+
+<p>&nbsp;</p>
+
+
+<a name="date_functions"></a><p class="stitle">Date Functions</p>
+
+<table width=100% cellspacing=1 cellpadding=1 border=0>
+
+<tr><td class="bodyb" width=15% valign=top><a name="today"    ></a>today</td>    <td class="body" width=85%><span class="bodybi">today()                                                    </span>- current date                              <br>returns the current date as a number.<span class="desc"> i.g. 20020807 (Aug. 07, 2002)</span><p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="yeardays" ></a>yeardays</td> <td class="body" width=85%><span class="bodybi">yeardays(year)                                             </span>- number of days in a year                  <br>returns the actual number of days in the given year.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="monthdays"></a>monthdays</td><td class="body" width=85%><span class="bodybi">monthdays(year, month)                                     </span>- number of days in a month                 <br>returns the actual number of days in the given month.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="date2days"></a>date2days</td><td class="body" width=85%><span class="bodybi">date2days(date)                                            </span>- date to serial date number conversion     <br>returns the number of days to the given date since the Epoch.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="days2date"></a>days2date</td><td class="body" width=85%><span class="bodybi">days2date(date)                                            </span>- serial date number to date conversion     <br>date2days(date) returns the date calculated from the given number of days since the Epoch.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="eomday"   ></a>eomday</td>   <td class="body" width=85%><span class="bodybi">eomday(year, month)                                        </span>- last day of month                         <br>returns the last day of the month for the given year and month.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="eomdate"  ></a>eomdate</td>  <td class="body" width=85%><span class="bodybi">eomdate(year, month)                                       </span>- last date of month                        <br>returns the last date of the month for the given year and month.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="weekday"  ></a>weekday</td>  <td class="body" width=85%><span class="bodybi">weekday(date)                                              </span>- day of the week                           <br><p>returns the day of the week in numeric form.</p>weekday:<ul class="desc"><li>0 = Sun<li>1 = Mon<li>2 = Tue<li>3 = Wed<li>4 = Thu<li>5 = Fri<li>6 = Sat</ul></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="isbizdate"></a>isbizdate</td><td class="body" width=85%><span class="bodybi">isbizday(date)                                             </span>- true for date that is business day        <br>returns 1 if date is a business day and 0 otherwise.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="nbizdate" ></a>nbizdate</td> <td class="body" width=85%><span class="bodybi">nbizdate(date)                                             </span>- next business day                         <br>returns the date of the next business day from the reference date.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="pbizdate" ></a>pbizdate</td> <td class="body" width=85%><span class="bodybi">pbizdate(date)                                             </span>- previous business day                     <br>returns the date of the previous business day from the reference date.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="adddays"  ></a>adddays</td>  <td class="body" width=85%><span class="bodybi">adddays(date, days)                                        </span>- date added by given days                  <br>returns the reference date added by given days.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="addmonths"></a>addmonths</td><td class="body" width=85%><span class="bodybi">addmonths(date, months, end_month)                         </span>- date added by given months                <br><p>returns the reference date added by given months.</p>end_month:<ul class="desc"><li>0 = actual<li>1 = end month</ul></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="addterms" ></a>addterms</td> <td class="body" width=85%><span class="bodybi">addterms(date, terms, frequency, end_month)                </span>- date added by given terms                 <br><p>returns the reference date added by given terms. </p>frequency:<ul class="desc"><li>1 = annual<li>2 = semiannual<li>4 = quarterly<li>6 = bimonthly<li>12 = monthly<li></ul>end_month:<ul class="desc"><li>0 = actual<li>1 = end month</ul></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="days360"  ></a>days360</td>  <td class="body" width=85%><span class="bodybi">days360(start_date, end_date, european)                    </span>- days between dates based on 360-day year  <br><p>returns the number of days between start_date and end_date based on a 360-day year.</p>european:<ul class="desc"><li>0 = american<li>1 = european</ul></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="days365"  ></a>days365</td>  <td class="body" width=85%><span class="bodybi">days365(start_date, end_date)                              </span>- days between dates based on 365-day year  <br>returns the number of days between start_date and end_date based on a 365-day year.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="daysact"  ></a>daysact</td>  <td class="body" width=85%><span class="bodybi">daysact(start_date, end_date)                              </span>- actual number of days between dates       <br>returns the actual number of days between two dates.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="daysbet"  ></a>daysbet</td>  <td class="body" width=85%><span class="bodybi">daysbet(start_date, end_date, basis)                       </span>- days between dates for any day-count basis<br><p>returns the number of days between start_date and end_date using the given day-count basis.</p>basis:<ul class="desc"><li>0 = actual/actual<li>1 = actual/360<li>2 = actual/365<li>3 = 30/360<li>4 = 30E/360<li>5 = NL/365</ul></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="monthsbet"></a>monthsbet</td><td class="body" width=85%><span class="bodybi">monthsbet(start_date, end_date)                            </span>- months between dates                      <br>returns the number of months between start_date and end_date.<p></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="termsbet" ></a>termsbet</td> <td class="body" width=85%><span class="bodybi">termsbet(start_date, end_date, frequency)                  </span>- terms between dates                       <br><p>returns the number of terms between start_date and end_date.</p>frequency:<ul class="desc"><li>1 = annual<li>2 = semiannual<li>4 = quarterly<li>6 = bimonthly<li>12 = monthly</ul></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="termfrac" ></a>termfrac</td> <td class="body" width=85%><span class="bodybi">termfrac(start_date, end_date, frequency, basis, end_month)</span>- fraction of term between dates            <br><p>returns a fraction based on the number of days between start_date and end_date using the given day-count basis.</p> frequency: <ul class="desc"><li>1 = annual<li>2 = semiannual<li>4 = quarterly<li>6 = bimonthly<li>12 = monthly</ul><p>basis:<ul class="desc"><li>0 = actual/actual<li>1 = actual/360<li>2 = actual/365<li>3 = 30/360<li>4 = 30E/360<li>5 = NL/365</ul><p>end_month:<ul class="desc"><li>0 = actual<li>1 = end month</ul></span></td></tr>
+<tr><td class="bodyb" width=15% valign=top><a name="yearfrac" ></a>yearfrac</td> <td class="body" width=85%><span class="bodybi">yearfrac(start_date, end_date, basis, end_month)           </span>- fraction of year between dates            <br><p>returns a fraction based on the number of days between start_date and end_date using the given day-count basis.</p>basis:<ul class="desc"><li>0 = actual/actual<li>1 = actual/360<li>2 = actual/365<li>3 = 30/360<li>4 = 30E/360<li>5 = NL/365</ul>end_month:<ul class="desc"><li>0 = actual<li>1 = end month</ul></td></tr>
+  
+</table><p>
+
+<!-- END OF CONTENTS -->
+
+    </td>
+  </tr>
+</table><p>
+
+
+<table width=560 cellspacing=0 cellpadding=0 border=0>
+  <tr>
+    <td><hr size=1 noshade></td>
+  </tr>
+  <tr>
+    <td align=center class="body">
+		Copyright &copy; 1999-2006 by <a href="mailto:crimsonware@yahoo.com">Ingyu Kang</a>,<br>
+		Copyright &copy; 2006-2007 by <a href="http://www.emeraldeditor.com">Emerald Editor Community</a>.<br>
+		All rights reserved.
+    </td>
+  </tr>
+</table><p>
+
+
+</body>
+</html>

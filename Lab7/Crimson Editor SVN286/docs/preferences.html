@@ -1,0 +1,341 @@
+<html>
+<head>
+<link rel="StyleSheet" href="style.css" type="text/css">
+<title>Crimson Editor &ndash; Help Topics &ndash; Preferences</title>
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+</head>
+<body bgcolor="#FFFFFF">
+
+<a name="top"></a>
+
+<table width=560 cellspacing=0 cellpadding=0 border=0>
+  <tr>
+    <td class="body">
+
+<!-- BEGIN OF CONTENTS -->
+
+<table width=100% cellspacing=0 cellpadding=0 border=0><tr><td class="title">
+<b>Crimson Editor &ndash; <a href="index.html">Help Topics</a> &ndash; Preferences<hr size=1 noshade></b>
+</td><td class="body" align=right></td></tr></table>
+
+
+
+<p>
+
+<p><a href="#general">General Page</a>
+<ul>
+<li><a href="#visual">Visual Page</a>
+<li><a href="#fonts">Fonts Page</a>
+<li><a href="#colors">Colors Page</a>
+<li><a href="#print_options">Print Options Page</a>
+</ul>
+</p>
+
+<a href="#file">File Page</a>
+<ul>
+<li><a href="#association">Association Page</a>
+<li><a href="#backup">Backup Page</a>
+<li><a href="#syntax">Syntax Page</a>
+<li><a href="#filters">Filters Page</a>
+</ul>
+
+<p><a href="#ftp">FTP Page</a><br>
+<ul>
+<li><a href="#ftpbackup">FTP Backup Page</a></p>
+</ul>
+
+<p><a href="#tools">Tools Page</a><br>
+<ul>
+<li><a href="#user_tools">User Tools Page</a><br>
+<li><a href="#macros">User Macros Page</a><br>
+</ul>
+</p>
+
+<a name="general"></a>
+<h2 class="stitle">Preferences &ndash; General Page</h2>
+
+<p>This property page contains general settings that control behavior of Crimson Editor and it's look and feel.</p>
+
+<p align=center><img src="images/pref_general.png" width="546" height="440" border=0 alt="Preferences &ndash; General Page"></p>
+
+
+<ul>
+ <li><p><b>Tab size:</b> Sets tab size used in documents.</p>
+ <li><p><b>Use spaces in place of tab:</b> Insert appropriate number of space characters when tab character is typed. See also: <i><a href="#file">Preferences &ndash; File &ndash; File Page &ndash; Convert tabs to spaces before saving.</a></i></p>
+ <li><p><b>Word wrap indentation:</b> Sets the size of word wrapping indentation. When a line is word wrapped, the consecutive lines, that are not separated from the first line physically, will be indented by the size specified.</p>
+ <li><p><b>Use fixed wrap width:</b> If checked, word wrapping occurs at the specified position, otherwise it occurs at the right edge of a window.</p>
+ <li><p><b>Open document word wrapped:</b> Makes Crimson Editor turn on word wrapping feature automatically whenever a document is loaded.</p>
+ <li><p><b>Allow multiple instances:</b> Allows multiple instances of Crimson Editor running at the same time.</p>
+ <li><p><b>Enable auto indent:</b> If this option is turned on, Crimson Editor tries to indent the line of editing properly.</p>
+ <li><p><b>Home key goes to first position:</b> Makes the caret to go to the first position in the line instead of first indented character.<p>
+ <li><p><b>Search wraps at end of file:</b> Enables circular search so after the last occurence of a search pattern in the file the search will jump to first one.</p>
+ <li><p><b>Enable drag & drop text exiting:</b> Enables Drag-and-Drop feature if checked.</p>
+ <li><p><b>Include blank lines in comment blocks:</b> If unchecked any lines that are empty will not get a comment symbol placed at the start of the line if CTRL+M is pressed.</p>
+ <li><s><b>Keep Settings Seperated by user:</b> Allows different settings to be used by different users.</s></p>
+</ul>
+
+
+<a name="visual"></a>
+<h2 class="stitle">Preferences &ndash; General &ndash; Visual Page</h2>
+
+<p>This property page contains settings that control appearance of Crimson Editor. Please note that there are also toolbar and window controls that are located in the <a href="commands.html#view_menu"><i>View &ndash; Toolbars/Views</i></a> section of main menu.</p>
+
+<p align=center><img src="images/pref_visual.png" width="546" height="440" border=0 alt="Preferences &ndash; General &ndash; Word Wrap Page"></p>
+
+<ul>
+ <li><p><b>Line spacing:</b> Sets the relative size of space between lines.</p>
+ <li><p><b>Caret width:</b> Sets width of the caret for <i>Insert Mode</i> in percentage of average character width. In <i>Overwrite Mode</i>, the width of the caret is 100% of the character width on which the caret is currently on, and is not changable.</p>
+ <li><p><b>Line number digit count:</b> Sets the number of digits to be used for numbering lines.</p>
+ <li><p><b>File tab max string size:</b> Sets maximum string size of filenames displayed in the <i>File Selection Tab</i>. If a filename is longer than this size, it will be abbreviated into the size specified and an ellipsis will be appended at the end.</p>
+ <li><p><b>1st &amp; 2nd column marker at:</b> Draws vertical dotted lines on screen at the specified position. Column markers are helpful sometimes especially when struggling with strictly formatted languages. (i.e. FORTRAN)</p>
+ <li><p><b>Show line numbers:</b> If checked line numbers are shown. Number of digits to be used by line numbers in defined by <i>Line number digit count</i></p>
+ <li><p><b>Show selection margin:</b> Toggles selection margin for line numbers and bookmarks. If line numbers are enabled selection margin is enabled by default.</p>
+ <li><p><b>Highlight active line:</b> Highlights active line by filling color inside and drawing a dotted box around it. You can specify the filling color of active line at <i><a href="#colors">Preferences &ndash; General &ndash; Colors Page</a></i>.</p>
+ <li><p><b>Highlight matching pairs:</b> Highlights matching pairs by underlining both of the pairs when the caret is currently on one of them.</p>
+ <li><p><b>Embolden Keywords:</b> Draws keywords in a document using bold character font. This option applies to both screen and print pages.</p>
+ <li><p><b>Italicize Comment:</b> Draws comment in a document using italic character font. This option applies to both screen and print pages.</p>
+ <li><p><b>Show tab character:</b> If checked tab characters are shown with light grey arrows.</p>
+ <li><p><b>Show line breaks:</b> If checked line breake characters will be shown at the end of each line.</p>
+</ul>
+
+<a name="colors"></a>
+<h2 class="stitle">Preferences &ndash; General &ndash; Colors Page</h2>
+ 
+<p>This property page shows the colors to draw documents in screen and print pages. Clicking on a color item opens a <i>Color Dialog Box</i> to change the color of each item.</p>
+<p align=center><img src="images/pref_colors.png" width="546" height="440" border=0 alt="Preferences &ndash; General &ndash; Colors Page"></p>
+
+<ul>
+ 
+ <li><p><b>General Colors:</b> This setting control colors of the main editor window.</p>
+ <ul><p>
+  <li>Background
+  <li>Active Line
+  <li>Normal text
+  <li>Constant
+  <li>Comment
+  <li>String
+  <li>Delimiters
+  <li>Variable
+ </ul></p>
+ <li><p><b>Keyword Colors:</b> Syntax highlighting color settings.</p>
+ <ul><p>
+  <li>keyword0 - keyword9: Each of these keyword numbers correspond to keyword definition in custom syntax files.
+ </ul></p>
+ <li><p><b>Miscellaneous Colors:</b> Color settings thad did not fall into categories above.</p>
+ <ul><p>
+  <li><b>Left margin</b>: Color of select margin.
+  <li><b>Line numbers</b>: Color of line number digits.
+  <li><b>Range 1 &amp; 2 background</b>: Background for the Range Syntax highlighting.
+  <li><b>Highlighted text</b>: Highlighted text was designed for XML document to highlight all the string between brackets.
+  <li>Shadowed text: Color for shadowed text like HTML comments.
+ </ul></p>
+ <li><p><b>Load color scheme:</b> Select one of those color schemes from the drop down menu to load and apply predefined color scheme as a whole. You can define and save your own color schemes. Also there are four predefined color schemes available:</p>
+  <ul><p>
+   <li>default color scheme
+   <li>light gray color scheme
+   <li>simplified color scheme
+   <li>reversed color scheme
+  </ul></p>
+  <li><p><b>Load:</b> Load a color scheme that is currently selected in <i>Load color scheme</i> drop down menu. It's necessary to click the <i>Load</i> button to display the color scheme.</p>
+  <li><p><b>Save:</b> Save current color scheme. The saved color scheme will be automatically added to the <i>Load color scheme</i> drop down menu.</p>
+</ul>
+
+<a name="fonts"></a>
+<h2 class="stitle">Preferences &ndash; General &ndash; Fonts Page</h2>
+
+<p>This property page shows registered fonts used to draw documents in screen and print pages. Double clicking on a font item opens a <i>Font Dialog Box</i> to change the font. You can register your favorate fonts before you use it actually. Once after registering fonts, you can quickly switch between those registered fonts via <i>View &ndash; Screen Fonts</i> or <i>View &ndash; Printer Fonts</i> Menu.</p>
+<p align=center><img src="images/pref_fonts.png" width="546" height="440" border=0 alt="Preferences &ndash; General &ndash; Fonts Page"></p>
+
+
+<ul>
+ <li><b>Screen fonts:</b> Font for Edit Window and Line Numbers.
+ <li><b>Print fonts:</b> Font configuration for printing.
+ <li><b>Miscellaneous:</b> Screen fonts for Crimson Editor specific modes.
+ <ul>
+  <li>Column Mode: Font to be used when <i>Column Mode</i> is activated.
+  <li>Output Window: Font for user tools <i>Output Window</i>.
+ </ul>
+</ul>
+
+
+<a name="print_options"></a>
+<h2 class="stitle">Preferences &ndash; General &ndash; Print Options Page</h2>
+
+<p align=center><img src="images/pref_print_options.png" width="546" height="440" border=0 alt="Preferences &ndash; General &ndash; Print Options Page"></p>
+
+<p>Setting of this section allows user to specify print options. The following settings are available:</p>
+<ul>
+	<li><p><b>Page margin:</b> Sets the margin of print pages in milimeters.</p>
+	<li><p><b>Print page header:</b> Prints page header with the specified contents.</p>
+	<li><p><b>Print page footer:</b> Prints page footer with the specified contents.</p>
+	<li><p><b>Print line numbers:</b> Prints line numbers in left side of document contents.</p>
+	<li><p><b>Print syntax highlight:</b> Prints document contents in colors, otherwise it will be printed in black. This option is to be used with color printers.</p>
+</ul>
+
+<p>Contents of the documents header and footer can be customized. Both header and footer are divided into three parts - left, center and right. Each part may contain the following elements automatically generated at print time:</p>
+<ul><p>
+	<li>File Path
+	<li>File Name
+	<li>Page Number
+	<li>Total Page Count
+	<li>Current Date
+	<li>Current Time
+</ul></p>
+
+<a name="file"></a>
+<h2 class="stitle">Preferences &ndash; File Page</h2>
+
+<p align=center><img src="images/pref_file.png" width="546" height="440" border=0 alt="Preferences &ndash; File Page"></p>
+
+<p>This section contains setting that control Crimson Editor file handling.</p>
+
+<ul>
+	<li><p><b>Initial working directory:</b> Sets working directory. When Crimson Editor start, the working directory is to be opened in the <i>Directory Window</i>. If no working directory is specified, the last explored directory is to be opened instead.</p>
+	<li><p><b>Create new document on start up:</b> If this option is set, Crimson Editor creates a new empty document on start up when there is no document to open.</p>
+	<li><p><b>Reload last working file on start up:</b> If this option is set, Crimson Editor reloads all the last working files opened in previous session on start up.</p>
+	<li><p><b>Convert tabs to spaces before saving:</b> If this option is set, Crimson Editor converts all the tabs in a document into spaces before saving the document.</p>
+	<li><p><b>Remove trailing white spaces before saving:</b> If this option is set, Crimson Editor removes all the trailing white spaces in a document before saving the document.</p>
+	<li><p><b>Save files in Unix format:</b> If this option is set, Crimson Editor saves a document padding each line in the document with <i>LF</i> only.</p>
+	<li><p><b>Save remote files in Unix format:</b> If this option is set, Crimson Editor saves a remote document padding each line in the document with <i>LF</i> only.</p>
+</ul>
+
+<a name="backup"></a>
+<h2 class="stitle">Preferences &ndash; File &ndash; Backup Page</h2>
+
+<p align=center><img src="images/pref_backup.png" width="546" height="440" border=0 alt="Preferences &ndash; File &ndash; Backup Page"></p>
+
+<p>This property page shows settings for how to make backup files.</p>
+<ul>
+	<li><p> You can choose one of those backup strategy:</p>
+    <ul><p>
+    	<li>Do not make any backup file.
+    	<li>Make backup file before saving a file.
+    	<li>Make backup file before opening a file.
+    </ul></p>
+	<li><p><b>Backup extension:</b> Specifies backup file extension.</p>
+	<li><p><b>Backup file name:</b> Specifies backup file name.</p>
+	<li><p><b>Backup directory:</b> Specifies the directory where backup files to be made. Do not set this value to make backup files in the same source directory.<p>
+</ul>
+
+
+<a name="association"></a>
+<h2 class="stitle">Preferences &ndash; File &ndash; Association Page</h2>
+
+<p align=center><img src="images/pref_association.png" width="546" height="440" border=0 alt="Preferences &ndash; File &ndash; Association Page"></p>
+
+<ul>
+	<li><p><b>Associate:</b> Associates the given file extension with Crimson Editor. Once you associate a file extension with Crimson Editor, double clicking on a file item which has the specified file extension in the <i>Window Explorer</i> opens that file in Crimson Editor.</p>
+	<li><p><b>Restore:</b> Restores the file type association back into the original.</p>
+</ul>
+
+
+<a name="syntax"></a>
+<h2 class="stitle">Preferences &ndash; File &ndash; Syntax Page</h2>
+
+<p align=center><img src="images/pref_syntax.png" width="546" height="440" border=0 alt="Preferences &ndash; File &ndash; Syntax Page"></p>
+
+<ul>
+	<li><p>This property page shows a list of registered syntax types which is to be displayed in <i>Document &ndash; Syntax Type</i> Menu. You can customize the list of syntax types by adding, moving or deleting each item.</p>
+	<li><p>To register a new syntax type, two syntax definition files are needed. One is a language specification file, and the other is a language keywords file. If you do not have syntax definition files for your favorate language, visit Homepage of Crimson Editor to check if someone has posted one or to read documents about how to make custom syntax definition files.</p>
+</ul>
+
+
+<a name="filters"></a>
+<h2 class="stitle">Preferences &ndash; File &ndash; Filters Page</h2>
+
+<p align=center><img src="images/pref_filters.png" width="546" height="440" border=0 alt="Preferences &ndash; File &ndash; Filters Page"></p>
+
+<ul>
+	<li><p>This property page shows a list of registered file filters which is used in <i>Open</i> dialog box, <i>Save As</i> dialog box, <i>Open Remote</i> dialog box and <i>Save As Remote</i> dialog box. File filters are also used in the <i>Directory Window</i>. You can customize the list of file filters by adding, moving or deleting each item.</p>
+</ul>
+
+<a name="ftp"></a>
+<h2 class="stitle">Preferences &ndash; FTP Page</h2>
+
+<p align=center><img src="images/pref_ftp.png" width="546" height="440" border=0 alt="Preferences &ndash; FTP"></p>
+
+<ul>
+	<li><p>Allows user to set their FTP settings up in the preferences as well as under <i><a href="commands.html#file_menu">File &ndash; FTP &ndash; FTP Settings</a></i></p>
+</ul>
+
+<a name="ftpbackup"></a>
+<h2 class="stitle">Preferences &ndash; FTP &ndash; FTP Backup Page</h2>
+
+<p>This page contains setting for FTP backup files.</p>
+<p align=center><img src="images/pref_ftp_backup.png" width="546" height="440" border=0 alt="Preferences &ndash; FTP &ndash; FTP Backup Page"></p>
+
+<ul>
+	<li><p>Number of backups of FTP stite: This Allows a user to set the number of backups of their sites to keep. Any files sent/received will be backed up.</p>
+	<li><p>Directory to keep FTP site backups: This is the directory to store the backups in, by default it is &lt;CE install DIR&ndash;&#92;ftp_backup&#92;</p>
+</ul>
+
+<a name="tools"></a>
+<h2 class="stitle">Preferences &ndash; Tools Page</h2>
+<p>This page contains general tools setting.</p>
+<p align=center><img src="images/pref_tools.png" width="546" height="440" border=0 alt="Preferences &ndash; Tools Page"></p>
+
+<ul>
+	<li><p><b>Use Crimson Editor in Internet Explorer 5:</b> Sets Crimson Editor as default source editor for Internet Explorer. If you select 'View Source' popup menu item of Internet Explorer, the source file will be opened in Crimson Editor.</p>
+	<li><p><b>Add Crimson Editor to right mouse button of Window Explorer:</b> Adds 'Crimson Editor' menu item to the popup menu of Window Explorer. Select file item(s) in Window Explore, click right button of mouse, and select 'Crimson Editor' then selected file(s) will be opened in Crimson Editor.</p>
+	<li><p><b>Open DOS shell in active file's directory:</b> Instead of just opening a DOS shell Checking this will force the shell to open in the same directory as the currently active file.</p>
+</ul>
+
+
+<a name="user_tools"></a>
+<h2 class="stitle">Preferences &ndash; Tools &ndash; User Tools Page</h2>
+
+<p>This property page shows registered user tools that can be executed in Crimson Editor by pressing a single hot-key. Users can register any command that can be executed in Windows system to automate their work.</p>
+
+<p align=center><img src="images/pref_user_tools.png" width="546" height="440" border=0 alt="Preferences &ndash; Tools &ndash; User Tools Page"></p>
+
+   <ul>
+ 	<li><b>Menu text:</b> Sets string to be displayed in <i>Tools</i> menu.
+ 	<li><b>Command:</b> Specifies a command to execute.
+ 	<li><b>Argument:</b> Sets command line argument.
+ 	<li><b>Initial dir:</b> Sets Initial directory where to execute this command.
+ 	<li><b>Hot key:</b> Sets hot key to invoke this command.
+ 	<li><b>Close on exit:</b> If the command is a DOS application, this option will close the MS-DOS shell window immediately after executing this command.
+ 	<li><b>Capture output:</b> Redirects the output from the command into the <i>Output Window</i> of Crimson Editor.
+ 	<li><b>Use short filename (8.3):</b> Converts long filename to short filename in the argument passed to the command.
+ 	<li><b>Save beore execute:</b> Saves the document first before executing this command.
+ 
+</ul>
+
+
+<a name="macros"></a>
+<h2 class="stitle">Preferences &ndash; Tools &ndash; Macros Page</h2>
+
+<p>This property page shows registered user macros. Macro is a sequence of keyboard actions recorded by users to do their repeatative work by pressing a single hot-key. In this page, users can rename, reposition, remove each macro items.</p>
+
+<p align=center><img src="images/pref_macros.png" width="546" height="440" border=0 alt="Preferences &ndash; Tools &ndash; Macros Page"></p>
+
+<ul>
+    <li><b>Menu text:</b> Sets string to be displayed in <i>Macros</i> menu.
+    <li><b>Hot key:</b> Sets hot key to invoke this macro.
+</ul>
+
+
+<!-- END OF CONTENTS -->
+
+    </td>
+  </tr>
+</table><p>
+
+
+<table width=560 cellspacing=0 cellpadding=0 border=0>
+  <tr>
+    <td><hr size=1 noshade></td>
+  </tr>
+  <tr>
+    <td align=center class="body">
+		Copyright &copy; 1999-2006 by <a href="mailto:crimsonware@yahoo.com">Ingyu Kang</a>,<br>
+		Copyright &copy; 2006-2007 by <a href="http://www.emeraldeditor.com">Emerald Editor Community</a>.<br>
+		All rights reserved.
+    </td>
+  </tr>
+</table><p>
+
+
+</body>
+</html>

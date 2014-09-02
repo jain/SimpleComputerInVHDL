@@ -1,0 +1,299 @@
+<html>
+<head>
+	<link rel="StyleSheet" href="style.css" type="text/css">
+	<title>Crimson Editor &ndash; Help Topics &ndash; Custom Syntax Files</title>
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache">
+</head>
+<body bgcolor="#FFFFFF">
+
+<a name="top">
+
+<table width=640 cellspacing=0 cellpadding=0 border=0>
+  <tr>
+    <td class="body">
+
+<!-- BEGIN OF CONTENTS -->
+
+<table width=100% cellspacing=0 cellpadding=0 border=0>
+	<tr>
+		<td class="title"><b>Crimson Editor &ndash; <a href="index.html">Help Topics</a> &ndash; Custom Syntax Files</b></td>
+		<td class="body" align=right></td>
+	</tr>
+</table>
+
+<hr size=1 noshade>
+
+<p>This document explains how to make custom syntax files for Crimson Editor.</p>
+
+<a name="history"></a>
+
+<p class="stitle">REVISION HISTORY</p>
+
+<p class="body">New features in 3.30:<p>
+<ol>
+	<li><span class="text">$BLOCKCOMMENT2ON, $BLOCKCOMMENT2OFF</span> are added (to support DELPHI)
+	<li>Line comment delimiters and block comment delimiters are not case sensitive. It's possible to use 'REM' as line comment delimiter
+	<li>Block comment delimiters are checked prior to line comment delimiters. It's possible to use '*' as line comment delimiter, while set '/*' and '*/' as block comment delimiters
+</ol>
+
+
+<p class="body">New features in 3.40:</p>
+<ol>
+	<li><span class="text">$VARIABLEPREFIX, $SPECIALVARIABLECHARS</span> are introduced to highlight variables (Perl, PHP, Bash)
+	<li><span class="text">$HEXADECIMALMARK</span> is introduced to express hexadecimal numbers
+	<li><span class="text">$LINECOMMENTONFIRSTPOSITION</span> is introduced to express line comment delimiter which has meaning only when it is positioned at the beginning of a line
+</ol>
+
+<p class="body">New features in 3.45:<p>
+<ol>
+	<li>Three different kinds of link files (extension link files, firstline link files, pathname link files) to support automatic syntax type detection.
+	<li><span class="text">$QUOTATIONMARKRANGE, $LINECOMMENTRANGE, $BLOCKCOMMENTRANGE</span> was introduced to restrict effective range of syntax definition delimiters.
+</ol>
+<p class="body">New features in 3.72:<p>
+<ol>
+<li><span class="text">PAIRS4</span> is now supported</li>
+
+<a name="folders"></a>
+
+
+<p class="stitle">SYNTAX FILE FOLDERS</p>
+
+<p class="body">There are 'link' and 'spec' folders in Crimson Editor install directory. i.e. "C:\Program Files\Crimson Editor"<p>
+
+<p class="body">In 'link' folder, there are various link files. A link file simply contains information that which syntax type a file with specific file name or file extension is categorized to. Link files are used to detect syntax type of an open document automatically.</p>
+
+
+<p class="body">There are two kinds of syntax definition files in 'spec' folder.</p>
+
+<ol>
+	<li>Language specification files (i.e. PHP.SPC)
+	<li>Language keywords files (i.e. PHP.KEY)
+</ol>
+
+<p class="body">One for each kind of syntax definition file is needed for a specific syntax type or a specific programming language. In a language specification file, there is information that defines attributes of the programming language. In a language keywords file, there is a list of keywords (reserved words) used in the programming language.</p>
+
+
+<a name="linkfile"></a>
+
+
+<p class="stitle">LINK FILES (AUTOMATIC SYNTAX TYPE MAPPING)</p>
+
+<div class="body">
+Following examples show the contents of example link files and explaination about how those files are used in Crimson Editor to detect syntax type of an open file automatically.
+
+1. Extension link files (EXTENSION.*)
+<pre class="text">
+-- EXTENSION.PL ---
+LANGSPEC:PERL.SPC
+KEYWORDS:PERL.KEY
+--------------------
+</pre>
+
+<p>'EXTENSION.PL' file maps any file that has extension '.PL' to PERL syntax	type (PERL syntax type is composed of two syntax definition files 'PERL.SPC' and 'PERL.KEY').</p>
+
+<p>In most cases, Crimson Editor can detect the syntax type of a file successfully using this method.</p>
+
+
+2. Firstline link files (FIRSTLINE.*)
+<pre class="text">
+-- FIRSTLINE.PL ----
+CONTAINS:PERL
+LANGSPEC:PERL.SPC
+KEYWORDS:PERL.KEY
+--------------------
+</pre>
+
+<p>'FIRSTLINE.PL' file maps any file that has a keyword 'PERL' in the first line to PERL syntax type (PERL syntax type is composed of two syntax definition files 'PERL.SPC' and 'PERL.KEY').</p>
+<p>In Unix systems, it is the prefered way to inform the shell how to run a script file by jotting down the path to an appropriate execuable (interpreter) as comment in the first line of the script file. In this case, the script file has no extension usually. Following example shows information in the first line of a tipical perl script file.</p>
+
+<p class="text"> #!/usr/bin/perl -w</p>
+
+
+3. Pathname link files (PATHNAME.*)
+<pre class="text">
+-- PATHNAME.MAK ----
+CONTAINS:MAKEFILE
+LANGSPEC:MAKE.SPC
+KEYWORDS:MAKE.KEY
+--------------------
+</pre>
+
+'PATHNAME.MAK' file maps any file that has a keyword 'MAKEFILE' in its pathname
+to MAKE syntax type (MAKE syntax type is composed of two syntax definition files
+'MAKE.SPC' and 'MAKE.KEY').
+
+'make' is an excellent utility to manage and build large collections of source
+files and 'Makefile' is the default name of its standard input data file.
+'Makefile' has no extension or no information in the first line of its contents.
+In this case, Crimson Editor can use 'PATHNAME.MAK' file to detect the syntax
+type of 'Makefile'.
+
+
+When a document is opened in Crimson Editor, Crimson Editor tries to detect
+syntax type of the open document automatically using those link files.
+
+Crimson Editor follows the following steps to find the appropriate link file.
+<ol>
+	<li>Crimson Editor examines if there is an available extension link file
+	   whose name is composed by appending file extension to string "EXTENSION.".
+	<li>Crimson Editor scans all firstline link files until it could find a
+	   appropriate link file available.
+	<li>Crimson Editor scans all pathname link files until it could find a
+   appropriate link file available.
+</ol>
+
+</div>
+<a name="langspec"></a>
+
+<p class="stitle">LANGUAGE SPECIFICATION FILE</p>
+
+<div class="body">Language specification file defines attributes of a programming language. Let's look in the 'PHP.SPC' file for example.
+<pre class="text">
+------------------------ PHP.SPC ------------------------
+# PHP LANGUAGE SPECIFICATION FILE FOR CRIMSON EDITOR
+
+$CASESENSITIVE=NO
+$DELIMITERS=~`!@#$%^&amp;*()-+=|\{}[]:;"',.&lt;&gt;/?
+$KEYWORDPREFIX=&
+$VARIABLEPREFIX=$@%
+$SPECIALVARIABLECHARS=*#'`!$@%
+# $HEXADECIMALMARK=# - this disables line comment2 delimeter
+$ESCAPECHAR=\
+$QUOTATIONMARK1="
+$QUOTATIONMARK2='
+$QUOTATIONMARKRANGE=R1||R2
+$LINECOMMENT=//
+$LINECOMMENT2=#
+# $LINECOMMENTONFIRSTPOSITION= - not used
+$LINECOMMENTRANGE=RANGE1
+$BLOCKCOMMENTON=/*
+$BLOCKCOMMENTOFF=*/
+# $BLOCKCOMMENT2ON= - not used
+# $BLOCKCOMMENT2OFF= - not used
+$BLOCKCOMMENTRANGE=RANGE1
+$SHADOWON=&lt;!-
+$SHADOWOFF=--&gt;
+# $HIGHLIGHTON= - not used
+# $HIGHLIGHTOFF= - not used
+$RANGE1BEG=&lt;?
+$RANGE1END=?&gt;
+$RANGE2BEG=&lt;
+$RANGE2END=&gt;
+$INDENTATIONON={
+$INDENTATIONOFF=}
+$PAIRS1=()
+$PAIRS2=[]
+$PAIRS3={}
+$MULTILINESTRINGCONSTANT=YES
+---------------------------------------------------------
+</pre>
+
+<p><span class="textb">COMMENT</span>: As you have noticed already, any line begins with '#' is regarded as comment (actually any line that does not begin with '$' will be ignored).</p>
+<p><span class="textb">CASESENSITIVE</span>: Flag indicating if this programming language distinguishs between upper case characters and lower case characters. This information will be used to determine if a word is a reserved word or not.</p>
+<p><span class="textb">DELIMITERS</span>: Delimiters used in this programming language. Any set of characters not belong to delimiters can be a reserved word or a variable. White spaces (' ', '\t', '\r', '\n') do not need to be declared as delimiters explicitly. White spaces are regarded as delimiters by default. This information is quite important to analyze the syntax of a document, Crimson Editor could behave in strange way if this information is not set properly. </p>
+<p><span class="textb">KEYWORDPREFIX</span>: In some programming languages, there are delimiters that have special meaning. For example, '#include' in C language is a preprocessor command and should be regarded as reserved word. However, '#' is a delimiter in C language, we cannot highlight '#include' as reserved word in normal way. So comes the need for <span class="text">KEYWORDPREFIX</span>. Delimiters in <span class="text">KEYWORDPREFIX</span> can be front part of reserved word. In this example, '&' is indicated as <span class="text">KEYWORDPREFIX</span> because there are special codes in HTML like '&nbsp', '&gt' and '&lt'.</p>
+<p><span class="textb">VARIABLEPREFIX</span>: In some programming languages, variable name should begin with special delimiter. For example, variables in Perl should be prefixed with '$'. This means that any identifier prefixed with '$' is a variable.</p>
+<p><span class="textb">SPECIALVARIABLECHARS</span>: In Perl, '$#', '$!' and '$$var' are also variables. The difference between normal variable name and special variable name is that special variable name can consist of delimiters. Delimiters in <span class="text">SPECIALVARIABLECHARS</span> can be used to consist variable name and will be highlighted in Crimson Editor properly. <span class="text">SPECIALVARIABLECHARS</span> is used only when <span class="text">VARIABLEPREFIX</span> is set.</p>
+<p><span class="textb">HEXADECIMALMARK</span>: Hexadecimal numbers consist of numbers and characters between 'A' and 'F'. Usually, programming languages use special marks to distinguish hexadecimal numbers from decimal numbers or from identifiers. For example, '0x0F3E' is a hexadecimal number in C language, while '#3E4F6A' is a hexadecimal number in HTML.</p>
+<p><span class="textb">ESCAPECHAR</span>: Escape character in strings. For example, a chracter string like "She said \"Hello world\".\n" will not be highlighted properly if we do not set '\' as an escape character. Backslash ('\') is used as an escape character in most programming languages.</p>
+<p><span class="textb">QUOTATIONMARK1, QUOTATIONMARK2</span>: Quotation mark character. These characters must be one of <span class="text">DELIMITERS</span>. A character string enclosed with quotation marks is considered as constant string in Crimson Editor.</p>
+<p><span class="textb">QUOTATIONMARKRANGE</span>: Effective range of quotation mark character. Possible range should be one of the predefined range constant - <span class="text">GLOBAL, RANGE1, RANGE2, !RNGE1, !RNGE2, !R1&R2, R1||R2</span></p>
+<p><span class="textb">LINECOMMENT, LINECOMMENT2, LINECOMMENTONFIRSTPOSITION</span>: Marks indicating beginning of line comment to the end of a line. <span class="text">LINECOMMENTONFIRSTPOSITION</span> has effect only if the line comment delimiter is positioned at column number 1.</p>
+<p><span class="textb">BLOCKCOMMENTON, BLOCKCOMMENTOFF, BLOCKCOMMENT2ON, BLOCKCOMMENT2OFF</span>: Marks indicating beginning and end of block comment.</p>
+<p><span class="textb">LINECOMMENTRANGE, BLOCKCOMMENTRANGE</span>: Effective range of comment delimiters. Possible range should be one of the predefined range constant - <span class="text">GLOBAL, RANGE1, RANGE2, !RNGE1, !RNGE2, !R1&R2, R1||R2</span>.</p>
+<p><span class="textb">SHADOWON, SHADOWOFF</span>: Marks indicating beginning and end of shadowed text. (Shadowed text was designed for HTML comment in ASP, JSP, and PHP documents.)</p>
+<p><span class="textb">HIGHLIGHTON, HIGHLIGHTOFF</span>: Marks indicating beginning and end of highlighted text. (Highlighted text was designed for XML document to highlight all the string between brackets)</p>
+<p><span class="textb">RANGE1BEG, RANGE1END, RANGE2BEG, RANGE2END</span>: Marks indicating beginning and end of ranges. Ranges are used to limit keyword effective range. In this PHP example, '&lt;?' and '?&gt;' indicate beginning and end of PHP code block. And, '&lt;' and '&gt;' indicate beginning and end of HTML tags. <span class="text">RANGE1</span> delimiters are always checked prior to <span class="text">RANGE2</span> delimiters.</p>
+<p><span class="textb">INDENTATIONON, INDENTATIONOFF</span>: Auto indentation character. '{' and '}' works in many programming languages. These characters should be declared as <span class="text">DELIMITERS</span>.</p>
+<p><span class="textb">PAIRS1, PAIRS2, PAIRS3</span>: Pairs to be examined for pairs highlighting feature. The order of pairs is important. First character should be a openning bracket, and the second one should be a closing bracket. These characters should be declared as <span class="text">DELIMITERS</span>. Although this example only uses 3 pairs, <span class="text">PAIRS4</span> also works.</p>
+<p><span class="textb">MULTILINESTRINGCONSTANT</span>: Allows string constants that are broken into miltiple lines to be completely highlighted. If this parameter is missing or set to NO then only first line fo the string constant will be highilghted and the rest will be normal text.</p>
+
+<a name="keywords"></a>
+
+
+<p class="stitle">LANGUAGE KEYWORDS FILE</p>
+
+<p>In a language keywords file, there is a list of keywords (reserved words) used in the programming language. Let's look in the 'PHP.KEY' file for example.</p>
+
+<pre class="text">
+------------------------ PHP.KEY ------------------------
+[-COMMENT-:GLOBAL]
+# PHP LANGUAGE KEYWORDS FILE FOR CRIMSON EDITOR
+
+[KEYWORDS0:RANGE1]
+and abs addslashes array
+
+[KEYWORDS1:RANGE1]
+mysql_affected_rows mysql_close mysql_connect mysql_data_seek
+
+[KEYWORDS5:!R1&R2]
+a abbr above acronym address applet array area
+
+[KEYWORDS6:!R1&R2]
+abbr accept accesskey action align alink alt applicationname archive axis
+
+[KEYWORDS7:!RNGE1]
+white black red green blue yellow magenta orange purple
+
+[KEYWORDS8:!RNGE1]
+&amp;aacute &amp;agrave &amp;acirc &amp;amp &amp;atilde &amp;aring &amp;auml &amp;aelig
+---------------------------------------------------------
+</pre>
+
+<p>The way to assign keywords of a programming language to each keyword group is
+simply writing a list of keywords after special tags like [KEYWORDS0:GLOBAL].
+Followings are the meaning of the tags.</p>
+
+<p>KEYWORDS GROUPS:</p>
+<table width=100% cellspacing=0 cellpadding=0 border=0>
+	<tr><td width=25% class="textb">-COMMENT-<td class="body"> comment, will be ignored</tr>
+	<tr><td width=25% class="textb">KEYWORDS0<td class="body"> assigning keywords to <span class="text">KEYWORDS0</span> group.</tr>
+	<tr><td width=25% class="textb">KEYWORDS1<td class="body"> assigning keywords to <span class="text">KEYWORDS1</span> group.</tr>
+	<tr><td width=25% class="textb">KEYWORDS2<td class="body"> assigning keywords to <span class="text">KEYWORDS2</span> group.</tr>
+	<tr><td width=25% class="textb">KEYWORDS9<td class="body"> assigning keywords to <span class="text">KEYWORDS9</span> group.</tr>
+</table>
+
+<p>KEYWORDS RANGES:</p>
+<table width=100% cellspacing=0 cellpadding=0 border=0>
+	<tr><td width=25% class="textb">GLOBAL<td class="body"> Following keywords have effect in all document.</tr>
+	<tr><td width=25% class="textb">RANGE1<td class="body"> Following keywords have effect only in <span class="text">RANGE1</span>.</tr>
+	<tr><td width=25% class="textb">RANGE2<td class="body"> Following keywords have effect only in <span class="text">RANGE2</span>.</tr>
+	<tr><td width=25% class="textb">!RNGE1<td class="body"> Following keywords have effect only outside of <span class="text">RANGE1</span>.</tr>
+	<tr><td width=25% class="textb">!RNGE2<td class="body"> Following keywords have effect only outside of <span class="text">RANGE2</span>.</tr>
+	<tr><td width=25% class="textb">!R1&R2<td class="body"> Following keywords have effect only outside of <span class="text">RANGE1</span> and in RANGE2.</tr>
+	<tr><td width=25% class="textb">R1||R2<td class="body"> Following keywords have effect only in <span class="text">RANGE1</span> or in <span class="text">RANGE2</span>.</tr>
+</table>
+
+<p>All keywords assigned in one keywords group will appear with the same color in
+Crimson Editor. Users can assign different colors to different keywords groups.</p>
+
+<p>Keyword ranges are little bit difficult to understand. If we take an example for
+PHP, text enclosed with '&lt;?' and '?&gt;' is PHP code block and the range enclosed
+with those delimiters is defined as <span class="text">RANGE1</span> in our previous PHP.SPC file. So, the
+effective range for PHP keywords like 'if' and 'for' should be <span class="text">RANGE1</span>. On the
+other hand, text enclosed with '&lt;' and '&gt;' is HTML tags and the range enclosed
+with those delimiters is defined as <span class="text">RANGE2</span>. So the effective range for HTML
+keywords like 'table' and 'form' should be <span class="text">!R1&R2</span>.</p>
+</div>
+
+
+<!-- END OF CONTENTS -->
+
+<table width=100% cellspacing=0 cellpadding=0 border=0>
+	<tr><td><hr size=1 noshade></td>
+	</tr>
+	<tr>
+		<td align=center class="body">
+			Copyright &copy; 1999-2006 by <a href="mailto:crimsonware@yahoo.com">Ingyu Kang</a>,<br>
+			Copyright &copy; 2006-2007 by <a href="http://www.emeraldeditor.com">Emerald Editor Community</a>.<br>
+			All rights reserved.
+		</td>
+	</tr>
+</table>
+
+</tr>
+</table>
+
+</body>
+</html>

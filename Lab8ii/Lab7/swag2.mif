@@ -1,0 +1,20 @@
+-- Altera Memory Initialization File (MIF)
+
+DEPTH = 1024;
+WIDTH = 16;
+
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+
+CONTENT
+  BEGIN
+    [000..3FF] : 0000;  -- Default to NOP
+
+           000 : 4800;  -- 		  	IN   	SWITCHES	;Load value stored in Switches
+           001 : 3001;  --         	SHIFT   1
+           002 : 4C01;  -- 		  	OUT		LEDS
+           003 : 4C04;  --         	OUT		SEVENSEG
+           050 : 0014;  -- TWOSECS:   	DW      &H0014
+           051 : 0000;  -- INDATA:    	DW      &H0000
+           052 : 0000;  -- ZERO:    	DW      &H0000
+  END;

@@ -1,0 +1,83 @@
+<html>
+<head>
+<link rel="StyleSheet" href="style.css" type="text/css">
+<title>Crimson Editor &ndash; Help Topics &ndash; Command Line Options</title>
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+</head>
+<body bgcolor="#FFFFFF">
+
+<a name="top">
+
+<table width=560 cellspacing=0 cellpadding=0 border=0>
+  <tr>
+    <td>
+
+<!-- BEGIN OF CONTENTS -->
+
+<p class=title>Crimson Editor &ndash <a href="index.html">Help Topics</a> &ndash; Command Line Parameters</p>
+
+<hr size=1 noshade>
+
+<p>
+<div class="body">
+<p>Crimson Editor supports command line parameters specifying files to be opened.</p>
+
+<p>
+Crimson Editor allows multiple files to be specified in the command line.
+Each of the files specified will be opened when Crimson Editor starts up.
+The filenames on the command line should be separated with a space. i.e. 
+
+<p class="textb">cedt.exe test.c test.h</p>
+
+will open two files ("test.c", "test.h").</p>
+
+<p>For long filenames, they should be enclosed in quotes "". i.e. 
+
+<p class="textb">cedt.exe "long file name.txt"</p>
+
+will open the file named "long file name.txt".</p>
+
+<p>
+Crimson Editor supports wildcard characters to open files on the command line.
+Crimson Editor will accept any normal wildcard specification for files to be opened.
+i.e. <p class="textb">cedt.exe *.c</p> will open all files with the ".c" extension.</p>
+
+<p>
+To specify the line number at which to position the cursor when the file is opened,
+the line number should be specified with '/L' switch.
+i.e. <p class="textb">cedt.exe /L:5 test.c</p> will open the file with the cursor positioned at line 5.</p>
+
+<p>
+To prevent Crimson Editor loading the last opened documents you can use the switch <span class="textb">/safe</span>.
+This will cause Crimson Editor to instead open a blank document.
+i.e. <p class="textb">cedt.exe /safe</p> or <p class="textb">cedt.exe -safe</p></p>
+
+To find what version of Crimson Editor you have you can use the switch <span class="textb">/version</span>.
+This will cause Crimson Editor to output its version to the file cedt.ver in the same dir as the exe.
+It should be noted this will <b>NOT</b> work for pre-release/beta versions, they will put out their final version
+i.e. <p class="textb">cedt.exe /version</p> or <p class="textb">cedt.exe -version</p>
+</div>
+<!-- END OF CONTENTS -->
+
+    </td>
+  </tr>
+</table><p>
+
+
+<table width=560 cellspacing=0 cellpadding=0 border=0>
+  <tr>
+    <td><hr size=1 noshade></td>
+  </tr>
+  <tr>
+    <td align=center class="body">
+		Copyright &copy; 1999-2006 by <a href="mailto:crimsonware@yahoo.com">Ingyu Kang</a>,<br>
+		Copyright &copy; 2006-2007 by <a href="http://www.emeraldeditor.com">Emerald Editor Community</a>.<br>
+		All rights reserved.
+    </td>
+  </tr>
+</table><p>
+
+
+</body>
+</html>
